@@ -1,4 +1,4 @@
-name: hw-probe
+name: vin-hwprobe
 version: 1.4-11
 summary: Check operability of computer hardware and find drivers
 description: >
