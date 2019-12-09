@@ -1,5 +1,5 @@
 name: vin-hwprobe
-version: 1.4-11
+version: 1.0
 summary: Check operability of computer hardware and find drivers
 description: >
  A tool to check operability of computer hardware and upload result
@@ -140,7 +140,6 @@ parts:
       curl https://pci-ids.ucw.cz/v2.2/pci.ids > pci.ids
       make install PREFIX=/usr DESTDIR=$SNAPCRAFT_PART_INSTALL SHARED=no LIBKMOD=yes HWDB=no ZLIB=no DNS=no
       sed -i -e 's|/usr/share/pci.ids|/tmp/HW_PROBE_PCI_|' $SNAPCRAFT_PART_INSTALL/usr/sbin/lspci
-    build-packages:
       - gcc
       - make
       - curl
@@ -420,4 +419,6 @@ parts:
       - usr/bin/perl
       - usr/share/perl5/File/Copy.pm
       - usr/share/icons/hw-probe.png
-
+architectures:
+      - build-on: armhf
+        run-on: armhf
