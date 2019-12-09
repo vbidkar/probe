@@ -140,6 +140,7 @@ parts:
       curl https://pci-ids.ucw.cz/v2.2/pci.ids > pci.ids
       make install PREFIX=/usr DESTDIR=$SNAPCRAFT_PART_INSTALL SHARED=no LIBKMOD=yes HWDB=no ZLIB=no DNS=no
       sed -i -e 's|/usr/share/pci.ids|/tmp/HW_PROBE_PCI_|' $SNAPCRAFT_PART_INSTALL/usr/sbin/lspci
+    build-packages:
       - gcc
       - make
       - curl
